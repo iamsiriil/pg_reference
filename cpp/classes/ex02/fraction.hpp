@@ -16,6 +16,7 @@ class Fraction {
 		Fraction(Fraction&& other) noexcept;
 		Fraction& operator=(Fraction&& other) noexcept;
 		~Fraction();
+
 		void printFraction();
 };
 

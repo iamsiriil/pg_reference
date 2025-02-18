@@ -1,28 +1,25 @@
 #include "fraction.hpp"
 
-Fraction::Fraction() : num(0), den(0) {}
+Fraction::Fraction() : num(new int(0)), den(new int(1)) {}
 
-Fraction::Fraction(int n, int d) : num(new int), den(new int) {
-	*num = n;
-	*den = d;
+Fraction::Fraction(int n, int d) : num(new int(n)), den(new int(d)) {}
+
+Fraction::Fraction(const Fraction& other) {
+	num = new int(*other.num);
+	den = new int(*other.den);
 }
-
-Fraction::Fraction(const Fraction& other) : num(other.num), den(other.den) {}
 
 Fraction& Fraction::operator=(const Fraction& other) {
 	if (this != &other) {
-		delete num;
-		delete den;
-
-		num = other.num;
-		den = other.den;
+		*num = *other.num;
+		*den = *other.den;
 	}
 	return *this;
 }
 
 Fraction::Fraction(Fraction&& other) noexcept : num(other.num), den(other.den) {
-	other.num = 0;
-	other.den = 0;
+	other.num = nullptr;
+	other.den = nullptr;
 }
 
 Fraction& Fraction::operator=(Fraction&& other) noexcept {
@@ -33,8 +30,8 @@ Fraction& Fraction::operator=(Fraction&& other) noexcept {
 		num = other.num;
 		den = other.den;
 
-		other.num = 0;
-		other.den = 0;
+		other.num = nullptr;
+		other.den = nullptr;
 	}
 	return *this;
 }
@@ -45,6 +42,7 @@ Fraction::~Fraction() {
 }
 
 void Fraction::printFraction() {
-	std::cout << *num << "/" << *den << "\n";
+	if (num && den)
+		std::cout << *num << "/" << *den << "\n";
 }
 
