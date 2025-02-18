@@ -1,5 +1,9 @@
 ---
 root: ./
 structure: null
-readme: README.md
-summury: SUMMARY.md
+  readme: README.md
+  summury: SUMMARY.md
+
+redirect:
+  C++: ./cpp
+  The for Statement: ./cpp/statements/README.md
