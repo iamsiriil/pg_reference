@@ -1,8 +1,0 @@
----
-root: ./
-structure:
- readme: README.md
- summury: SUMMARY.md
-redirects:
- C++: ./cpp
- The for Statement: ./cpp/statements/README.md
