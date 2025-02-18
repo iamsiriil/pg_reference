@@ -1,5 +1,5 @@
+---
 root: ./
-
-structure:
-	readme: README.md
-	summury: SUMMARY.md
+structure: null
+readme: README.md
+summury: SUMMARY.md
