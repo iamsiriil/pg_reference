@@ -36,6 +36,14 @@ Fraction& Fraction::operator=(Fraction&& other) noexcept {
 	return *this;
 }
 
+Fraction& Fraction::operator*(const Fraction& other) {
+	Fraction *frac = new Fraction;
+	*frac->num = *num * *other.num;
+	*frac->den = *den * *other.den;
+	return *frac;
+	
+}
+
 Fraction::~Fraction() {
 	delete num;
 	delete den;

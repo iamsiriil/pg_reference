@@ -15,6 +15,7 @@ class Fraction {
 		Fraction& operator=(const Fraction& other);
 		Fraction(Fraction&& other) noexcept;
 		Fraction& operator=(Fraction&& other) noexcept;
+		Fraction& operator*(const Fraction& other);
 		~Fraction();
 
 		void printFraction();

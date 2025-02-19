@@ -19,6 +19,10 @@ int main() {
 	std::cout << "f2:\n";
 	f2.printFraction();
 	std::cout << std::endl;
+
+	std::cout << "f4\n";
+	Fraction f4 = f1 * f3;
+	f4.printFraction();
 	return 0;
 }
 
